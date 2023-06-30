@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Anegasaki - Mystery Dungeon Quizzes</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8" />
+</head>
+
+<body>
+
+<div class="scrollWith">
+	<button onclick="getElementById('status').classList.toggle('hidden');">Status</button>
+	<div id="status" class="hidden">
+		<div class="row">
+		<button onclick="toggleEffectDisplay()">Toggle exact answer effects</button>
+		</div>
+		<div id="display">
+			Lonely: 0<br>Docile: 0<br>Quirky: 0<br>Brave: 0<br>Sassy: 0<br>Calm: 0<br>Timid: 0<br>Jolly: 0<br>Quiet: 0<br>Hardy: 0<br>Rash: 0<br>Hasty: 0<br>Bold: 0<br>Naive: 0<br>Impish: 0<br>Relaxed: 0<br>
+		</div>
+		<p style="font-size: 80%;">If you have a tied first place, the games would normally add questions until the tie is broken, but you're able to go back in this version so I don't know how to emulate that.</p>
+	</div>
+</div>
+
+<div class="settings">
+	<h2>Games:</h2>
+		<div class="row">
+			<div class="column">
+<!--			<input type="radio" id="Rescue" name="game">-->
+				<label for="Rescue" class="notAdded">Red/Blue Rescue Team</label>
+<!--				<input type="radio" id="RescueDX" name="game">-->
+				<label for="RescueDX" class="notAdded">Rescue Team DX</label>
+			</div>
+			<div class="column">
+				<input type="radio" id="EoTD" name="game" checked>
+				<label for="EoTD">Explorers of Time/Darkness</label>
+<!--				<input type="radio" id="EoS" name="game">-->
+				<label for="EoS" class="notAdded">Explorers of Sky</label>
+			</div>
+			<div class="column">
+<!--			<input type="radio" id="Infinity" name="game">-->
+				<label for="Infinity" class="notAdded">Gates to Infinity</label>
+<!--			<input type="radio" id="Super" name="game">-->
+				<label for="Super" class="notAdded">Super Mystery Dungeon</label>
+			</div>
+		</div>
+
+	<h2>Mode:</h2>
+		<div class="row">
+			<input type="radio" id="Sim" name="mode" checked>
+			<label for="Sim" onclick="mode = 'Sim'; roll();">Simulator<br>
+			Get a random set of 8 questions</label>
+<!--			<input type="radio" id="Help" name="mode">-->
+			<label for="Help" class="notAdded">Pokémon<br>
+			Choose a Pokémon, and I'll highlight the questions that'll help you get it</label>
+			<input type="radio" id="Full" name="mode">
+			<label for="Full" onclick="mode = 'Full'; roll();">Full<br>
+			See every question</label>
+		</div>
+</div>
+
+<table>
+	<col style="width: 40%;"> <col style="width: 30%;"> <col id="cheat" class="hide">
+	<tbody id="questions">
+		<th>Question</th>
+		<th>Answer</th>
+		<th>Effects</th>
+	</tbody>
+</table>
+
+<p id="result">You seem to be... </p>
+
+<footer>
+	<a href="https://github.com/Anegasakii/">Repo</a>
+	<a href="https://anegasakii.github.io/">Website</a>
+</footer>
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

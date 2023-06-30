@@ -1,0 +1,153 @@
+@import url(https://anegasakii.github.io/base.css);
+body { color: white; }
+
+button:hover, label { cursor: pointer; }
+button { margin: 0; }
+button:active { color:var(--darkest); background-color: var(--lighter); }
+
+.scrollWith {
+	position: fixed;
+	top: 15px;
+	font-size: 110%;
+}
+
+.hidden { display: none; }
+.hide { visibility: collapse; }
+
+#status {
+	background-color: var(--darkest);
+	margin: 10px;
+	padding: 6px 12px;
+	border: white solid 1px;
+	width: 15vw;
+	min-width: 86px;
+	color: var(--lighter);
+}
+
+#status button {
+	border-width: 1px;
+	font-size: 100%;
+	margin: 4px;
+}
+
+#status p { margin: 2px; }
+
+.settings {
+	width: 80%;
+	margin:auto;
+}
+
+input[name="game"], input[name="mode"] { display: none; }
+
+.settings label {
+	display: inline-block;
+	font-size: 120%;
+	margin: 6px 12px;
+	padding: 6px 10px;
+	border: 2px solid var(--darker);
+	color: var(--lighter);
+}
+
+input[name="game"]:checked + label, input[name="mode"]:checked + label {
+	color:white;
+	border-color: var(--main);
+}
+
+label:hover {
+	animation-name: borderToLight;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}
+
+.column { display: flex; flex-direction:column; }
+.row { display: flex; flex-direction: row; justify-content: center; }
+
+.settings label { text-align: center; }
+
+.notAdded { color: var(--darker) !important; cursor: default !important; }
+.notAdded:hover { border-color: var(--darker) !important; border-radius: 0 !important; }
+
+.desc { border: 2px solid var(--lighter); width: 50%; }
+
+.bold { font-weight: bold; color: white; }
+
+table { width: 60vw; margin: auto;}
+table .column {
+	align-items: end;
+	text-align: right;
+	justify-content: center;
+}
+
+td { border-top: var(--lighter) solid 1px; padding: 5px; vertical-align: center; font-size: 110%; }
+th { font-size: 120%; }
+
+#result {
+	border: var(--main) solid 2px;
+	font-size: 120%;
+	width: 60vw;
+	margin: auto;
+	padding: 8px 16px
+}
+
+/*recoloured checkboxes taken from https://stackoverflow.com/a/63192288 */
+
+input[type="checkbox"]:checked {
+	background: white;
+}
+
+input[type="checkbox"] {
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: 0;
+	background: var(--darkest);
+	height: 16px;
+	width: 16px;
+	border: 1px solid var(--main);
+}
+  
+input[type="checkbox"]:after {
+	content: ' ';
+	position: relative;
+	border: solid #fff;
+	display: none;
+}
+
+@keyframes checkboxRound {
+	100% {
+		border-radius: 5px;
+	}
+}
+
+input[type="checkbox"]:hover {
+	animation-name: checkboxRound;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}
+
+@media (max-width: 700px) {
+	table {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+	}
+	tr {
+		margin: 10px; 
+		display: grid;
+		grid-template-areas:
+		'question question'
+		'answers effect';
+	}
+	td:first-child { grid-area: question; text-align: center;}
+	td:nth-child(2) { grid-area: answers; border: none;}
+	td:nth-child(3) { grid-area: effect; border: none;}
+
+	tr.effectsHidden {
+		grid-template-areas: 
+		'question question'
+		'answers answers';
+	}
+	tr.effectsHidden .column { align-items: center; }
+	th { display: none; }
+}
