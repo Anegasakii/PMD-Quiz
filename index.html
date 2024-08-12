@@ -28,14 +28,14 @@
 			<div class="column">
 <!--			<input type="radio" id="Rescue" name="game">-->
 				<label for="Rescue" class="notAdded">Red/Blue Rescue Team</label>
-<!--				<input type="radio" id="RescueDX" name="game">-->
+<!--			<input type="radio" id="RescueDX" name="game">-->
 				<label for="RescueDX" class="notAdded">Rescue Team DX</label>
 			</div>
 			<div class="column">
-				<input type="radio" id="EoTD" name="game" checked>
-				<label for="EoTD">Explorers of Time/Darkness</label>
-<!--				<input type="radio" id="EoS" name="game">-->
-				<label for="EoS" class="notAdded">Explorers of Sky</label>
+				<input type="radio" id="EOTD" name="game" checked>
+				<label for="EOTD" onclick="game = 'EOTD'; roll()">Explorers of Time/Darkness</label>
+				<input type="radio" id="EOS" name="game">
+				<label for="EOS" onclick="game = 'EOS'; roll()">Explorers of Sky</label>
 			</div>
 			<div class="column">
 <!--			<input type="radio" id="Infinity" name="game">-->
@@ -50,7 +50,7 @@
 			<input type="radio" id="Sim" name="mode" checked>
 			<label for="Sim" onclick="mode = 'Sim'; roll();">Simulator<br>
 			Get a random set of 8 questions</label>
-<!--			<input type="radio" id="Help" name="mode">-->
+<!--		<input type="radio" id="Help" name="mode">-->
 			<label for="Help" class="notAdded">Pokémon<br>
 			Choose a Pokémon, and I'll highlight the questions that'll help you get it</label>
 			<input type="radio" id="Full" name="mode">
@@ -71,7 +71,7 @@
 <p id="result">You seem to be... </p>
 
 <footer>
-	<a href="https://github.com/Anegasakii/">Repo</a>
+	<a href="https://github.com/Anegasakii/PMD-Quiz">Repo</a>
 	<a href="https://anegasakii.github.io/">Website</a>
 </footer>
 <script src="questions.js"></script>

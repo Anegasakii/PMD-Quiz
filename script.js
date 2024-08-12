@@ -27,7 +27,6 @@ let natures = {
 let chosenQ = [];
 let mode = 'Sim';
 let game = 'EOTD'
-let questions = allQuestions[game];
 
 function build() {
     let container = document.getElementById("questions")
@@ -70,6 +69,7 @@ function build() {
 }
 
 function roll() {
+    let questions = allQuestions[game];
     chosenQ = [];
     document.getElementById(mode).checked = true;
     switch (mode) {
