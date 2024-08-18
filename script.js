@@ -69,6 +69,7 @@ function build() {
 }
 
 function roll() {
+    updateStarters(game);
     let questions = allQuestions[game];
     chosenQ = [];
     document.getElementById(mode).checked = true;

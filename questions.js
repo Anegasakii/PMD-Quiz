@@ -534,7 +534,7 @@ const EOSq0 = new Question(
 const EOSq1 = new Question(
     "Do you want to be taller someday?",
     ["Totally!", "Of course not."],
-    [[['Sassy', 1], ['Calm', 1]]],
+    [[['Sassy', 1]], [['Calm', 1]]],
     'EOS'
 );
 

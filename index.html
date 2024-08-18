@@ -10,15 +10,32 @@
 <body>
 
 <div class="scrollWith">
-	<button onclick="getElementById('status').classList.toggle('hidden');">Status</button>
-	<div id="status" class="hidden">
-		<div class="row">
-		<button onclick="toggleEffectDisplay()">Toggle exact answer effects</button>
+	<div class="left">
+		<button onclick="getElementById('status').classList.toggle('hidden');">Status</button>
+		<div id="status" class="hidden">
+			<div class="row">
+			<button onclick="toggleEffectDisplay()">Toggle exact answer effects</button>
+			</div>
+			<div id="display">
+				Lonely: 0<br>Docile: 0<br>Quirky: 0<br>Brave: 0<br>Sassy: 0<br>Calm: 0<br>Timid: 0<br>Jolly: 0<br>Quiet: 0<br>Hardy: 0<br>Rash: 0<br>Hasty: 0<br>Bold: 0<br>Naive: 0<br>Impish: 0<br>Relaxed: 0<br>
+			</div>
+			<p style="font-size: 80%;">If you have a tied first place, the games would normally add questions until the tie is broken, but you're able to go back in this version so I don't know how to emulate that.</p>
 		</div>
-		<div id="display">
-			Lonely: 0<br>Docile: 0<br>Quirky: 0<br>Brave: 0<br>Sassy: 0<br>Calm: 0<br>Timid: 0<br>Jolly: 0<br>Quiet: 0<br>Hardy: 0<br>Rash: 0<br>Hasty: 0<br>Bold: 0<br>Naive: 0<br>Impish: 0<br>Relaxed: 0<br>
+	</div>
+	<div class="right">
+		<button onclick="getElementById('starters').classList.toggle('hidden');">Starters</button>
+		<div id="starters" class="hidden">
+			<table>
+				<thead>
+					<th>Starter</th>
+					<th>Nature (M/F)</th>
+				</thead>
+				<tbody id="starterList">
+					<td>Test</td>
+					<td>Test/test</td>
+				</tbody>
+			</table>
 		</div>
-		<p style="font-size: 80%;">If you have a tied first place, the games would normally add questions until the tie is broken, but you're able to go back in this version so I don't know how to emulate that.</p>
 	</div>
 </div>
 
@@ -75,6 +92,7 @@
 	<a href="https://anegasakii.github.io/">Website</a>
 </footer>
 <script src="questions.js"></script>
+<script src="starters.js"></script>
 <script src="script.js"></script>
 </body>
 
